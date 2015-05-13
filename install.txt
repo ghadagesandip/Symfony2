@@ -1,0 +1,39 @@
+1) to install symfony2 use following command :
+composer create-project symfony/framework-standard-edition my_project_name
+
+2) set 777 sermissions to app/cache and app/logs folders
+
+3) uncomment umask(0000); line in app/console and web/config.php
+
+4) run php app/console cache:clear command,
+ if you gets following error :
+  [Symfony\Component\Debug\Exception\ContextErrorException]
+  Warning: date_default_timezone_get(): It is not safe to rely on the system's timezone settings. You are *required* to
+  use the date.timezone setting or the date_default_timezone_set() function. In case you used any of those methods and y
+  ou are still getting this warning, you most likely misspelled the timezone identifier. We selected the timezone 'UTC'
+  for now, but please set date.timezone to select your timezone.
+
+  add following function in app/AppKernal.php
+
+   public function init(){
+        parent::init();
+        // get rid of Warning: date_default_timezone_get(): It is not safe to rely on the system's timezone
+        date_default_timezone_set( 'Europe/Paris' );
+    }
+
+ and now run command following command
+ > php app/console cache:clear
+
+5) run composer install
+
+refer video link : https://www.youtube.com/watch?v=Ks_DbrNCBiU
+
+
+
+
+
+
+
+
+
+
