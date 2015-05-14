@@ -1,0 +1,18 @@
+AppBundle\Entity\Product:
+    type: entity
+    table: null
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        name:
+            type: string
+            length: '200'
+        price:
+            type: decimal
+        description:
+            type: text
+    lifecycleCallbacks: {  }

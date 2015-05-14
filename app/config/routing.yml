@@ -5,3 +5,7 @@ acme_test:
 app:
     resource: "@AppBundle/Controller/"
     type:     annotation
+
+_acme_demo:
+    resource: "@AcmeDemoBundle/Resources/config/routing.yml"
+

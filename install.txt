@@ -29,6 +29,17 @@ composer create-project symfony/framework-standard-edition my_project_name
 refer video link : https://www.youtube.com/watch?v=Ks_DbrNCBiU
 
 
+6) create database using doctrine :
+ php app/console doctrine:database:create
+ > this will create a database with name given db connection params
+
+ generate entity run :
+ >php app/console doctrine:generate:entity
+
+ generate getter and setter method :
+ > php app/console doctrine:generate:entities AppBundle/Entity/Product
+
+
 
 
 
