@@ -1,0 +1,38 @@
+{% extends '::base.html.twig' %}
+
+{% block title %} Add new product {% endblock %}
+
+{% block body -%}
+
+
+    {{ form_start(form,{'attr':{'novalidate':'novalidate'}}) }}
+
+    <div class="form-group">
+        {{ form_label(form.name,'Product Name : ') }}
+        {{ form_widget(form.name,{'attr':{'class':'form-control'}}) }}
+        {{ form_errors(form.name) }}
+    </div>
+
+    <div class="form-group">
+        {{ form_label(form.price,'Product Price : ') }}
+        {{ form_widget(form.price,{'attr':{'class':'form-control'}}) }}
+        {{ form_errors(form.price) }}
+    </div>
+
+    <div class="form-group">
+        {{ form_label(form.description,'Description: ') }}
+        {{ form_widget(form.description,{'attr':{'class':'form-control'}}) }}
+        {{ form_errors(form.description) }}
+    </div>
+
+    <div class="form-group">
+        {{ form_widget(form.submit,{'attr':{'class':'btn btn-success'}}) }}
+    </div>
+
+    {{ form_end(form) }}
+
+            <a href="{{ path('product') }}" class="btn btn-default">
+                Back to the list
+            </a>
+
+{% endblock %}

@@ -1,0 +1,9 @@
+sandip_crud_homepage:
+    path:     /hello/{name}
+    defaults: { _controller: SandipCrudBundle:Default:index }
+
+_product_crud:
+   resource: "@SandipCrudBundle/Controller/ProductController.php"
+   type:     annotation
+
+

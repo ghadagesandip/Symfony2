@@ -45,6 +45,17 @@ add fields in database, based on entity
 create bundle use following command:
 > php app/console generate:bundle
 
+once Entity is created, use following command to create product :
+> php app/console generate:doctrine:crud
+
+
+About Routing,
+In app/config/routing.yml, add all bundles resources here, this tell symfony to load all routing configuration for a bundle from
+Resources/config/routing.yml (or routing.xml or routing.php )
+
+Create form class and reuse form, refer link : http://symfony.com/doc/current/best_practices/forms.html
+
+
 
 
 

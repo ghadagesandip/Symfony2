@@ -1,6 +1,7 @@
-acme_test:
-    resource: "@AcmeDemoBundle/Resources/config/routing.yml"
+sandip_crud:
+    resource: "@SandipCrudBundle/Resources/config/routing.yml"
     prefix:   /
+
 
 
 

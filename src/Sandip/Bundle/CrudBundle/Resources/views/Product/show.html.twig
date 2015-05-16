@@ -1,0 +1,31 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+
+    {% block title %} View Product Details {% endblock %}
+
+    <dl class="dl-horizontal">
+        <dt>Id</dt>
+        <dd>{{ entity.id }}</dd>
+
+        <dt>Name</dt>
+        <dd>{{ entity.name }}</dd>
+
+        <dt>Price</dt>
+        <dd>{{ entity.price }}</dd>
+
+        <dt>Description</dt>
+        <dd>{{ entity.description }}</dd>
+    </dl>
+
+
+    <a href="{{ path('product') }}" class="btn btn-primary">
+        Back to the list
+    </a>
+
+    <a class="btn btn-success" href="{{ path('product_edit', { 'id': entity.id }) }}">
+        Edit
+    </a>
+
+</ul>
+{% endblock %}
