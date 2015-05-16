@@ -57,6 +57,23 @@ Create form class and reuse form, refer link : http://symfony.com/doc/current/be
 
 
 
+///////////////////Create migration//////////////////
+
+1) Add new field in Entity table,
+
+2) now run command to generate migration file
+> php app/console doctrine:migrations:diff
+
+3)run command to apply migration changes :
+>  php app/console doctrine:schema:update --force
+
+4) now run to generate getter and setter methods
+> php app/console doctrine:generate:entities SandipCrudBundle:Product
+
+
+
+
+
 
 
 
