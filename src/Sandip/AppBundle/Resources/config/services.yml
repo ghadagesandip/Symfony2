@@ -1,0 +1,4 @@
+services:
+#    sandip_app.example:
+#        class: Sandip\AppBundle\Example
+#        arguments: [@service_id, "plain_value", %parameter%]

@@ -59,8 +59,6 @@ class Product
      */
     private $sku;
 
-
-
     /**
      * Get id
      *

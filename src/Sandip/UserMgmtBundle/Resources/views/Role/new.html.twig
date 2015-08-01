@@ -1,0 +1,24 @@
+{% extends '::base.html.twig' %}
+
+{% block title %} Add new role{% endblock %}
+
+{% block body -%}
+    <div class="row">
+        <div class="col-lg-2">
+            <a href="{{ path('role') }}">Back</a>
+        </div>
+        <div class="col-lg-10">
+            {{ form_start(form,{'attr':{'novalidate':'novalidate'}}) }}
+            <div class="form-group">
+                {{ form_label(form.role, 'Role Name : ') }}
+                {{ form_widget(form.role, {'attr':{'class':'form-control'}}) }}
+                {{ form_errors(form.role) }}
+            </div>
+
+            <div class="form-group">
+                {{ form_widget(form.submit,{'attr':{'class':'btn btn-success'}}) }}
+            </div>
+            {{ form_end(form) }}
+        </div>
+    </div>
+{% endblock %}

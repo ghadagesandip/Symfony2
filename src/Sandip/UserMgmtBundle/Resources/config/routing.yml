@@ -1,0 +1,7 @@
+sandip_user_mgmt_role:
+    resource: "@SandipUserMgmtBundle/Controller/RoleController.php"
+    type:     annotation
+
+sandip_user_mgmt_homepage:
+    path:     /hello/{name}
+    defaults: { _controller: SandipUserMgmtBundle:Default:index }

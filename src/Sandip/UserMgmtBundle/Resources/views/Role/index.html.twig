@@ -1,0 +1,50 @@
+{% extends '::base.html.twig' %}
+
+{% block title %} Role List {% endblock %}
+
+{% block body -%}
+
+    <div class="row">
+        <div class="col-lg-2">
+            <ul class="list-unstyled">
+                <li>
+                    <a href="{{ path('role_new') }}" class="btn btn-primary">
+                        Create a new role
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="col-lg-10">
+
+            {{ include('sessionmessage.html.twig') }}
+
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Role</th>
+                    <th>Createdat</th>
+                    <th>Modifiedat</th>
+                    <th>Actions</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for entity in entities %}
+                    <tr>
+                        <td><a href="{{ path('role_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
+                        <td>{{ entity.role }}</td>
+                        <td>{% if entity.createdAt %}{{ entity.createdAt|date('Y-m-d H:i:s') }} {% endif %}</td>
+                        <td>{% if entity.modifiedAt %}{{ entity.modifiedAt|date('Y-m-d H:i:s') }}{% endif %}</td>
+                        <td>
+                            <a class="btn btn-info" href="{{ path('role_show', { 'id': entity.id }) }}">show</a>&nbsp;
+                            <a class="btn btn-success" href="{{ path('role_edit', { 'id': entity.id }) }}">edit</a>
+                        </td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+    {% endblock %}

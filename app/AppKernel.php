@@ -8,7 +8,7 @@ class AppKernel extends Kernel
     public function init(){
         parent::init();
         // get rid of Warning: date_default_timezone_get(): It is not safe to rely on the system's timezone
-        date_default_timezone_set('Asia/Kolkata');
+        //date_default_timezone_set('Asia/Kolkata');
     }
 
 
@@ -25,6 +25,8 @@ class AppKernel extends Kernel
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
             new Doctrine\Bundle\MigrationsBundle\DoctrineMigrationsBundle(),
             new Sandip\Bundle\CrudBundle\SandipCrudBundle(),
+            new Sandip\UserMgmtBundle\SandipUserMgmtBundle(),
+            new Sandip\AppBundle\SandipAppBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {
@@ -32,7 +34,6 @@ class AppKernel extends Kernel
             $bundles[] = new Symfony\Bundle\WebProfilerBundle\WebProfilerBundle();
             $bundles[] = new Sensio\Bundle\DistributionBundle\SensioDistributionBundle();
             $bundles[] = new Sensio\Bundle\GeneratorBundle\SensioGeneratorBundle();
-            $bundles[] = new Acme\DemoBundle\AcmeDemoBundle();
         }
 
         return $bundles;

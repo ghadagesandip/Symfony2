@@ -1,0 +1,3 @@
+sandip_app_homepage:
+    path:     /hello/{name}
+    defaults: { _controller: SandipAppBundle:Default:index }

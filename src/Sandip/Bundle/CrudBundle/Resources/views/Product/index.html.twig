@@ -4,10 +4,9 @@
 
 {% block body -%}
 
-
     <div class="row">
         <div class="col-md-2">
-            <ul>
+            <ul class="list-unstyled">
                 <li>
                     <a href="{{ path('product_new') }}" class="btn btn-primary">
                         Create a new entry
@@ -16,38 +15,8 @@
             </ul>
         </div>
 
-
-
         <div class="col-md-10">
-
-            <div class="row">
-                <div class="col-md-8 col-md-offset-2">
-                    {% for flashmessage in app.session.flashbag.get('success') %}
-                        <div class="alert alert-success">
-                            {{ flashmessage }}
-                        </div>
-                    {% endfor %}
-
-                    {% for flashmessage in app.session.flashbag.get('info') %}
-                        <div class="alert alert-info">
-                            {{ flashmessage }}
-                        </div>
-                    {% endfor %}
-
-                    {% for flashmessage in app.session.flashbag.get('warning') %}
-                        <div class="alert alert-warning">
-                            {{ flashmessage }}
-                        </div>
-                    {% endfor %}
-
-                    {% for flashmessage in app.session.flashbag.get('danger') %}
-                        <div class="alert alert-danger">
-                            {{ flashmessage }}
-                        </div>
-                    {% endfor %}
-                </div>
-            </div>
-
+            {{ include('sessionmessage.html.twig') }}
             <table class="table table-striped">
                 <thead>
                 <tr>
@@ -68,7 +37,7 @@
                         <td>{{ entity.description }}</td>
                         <td>{% if entity.createdOn %}{{ entity.createdOn|date('Y-m-d H:i:s') }}{% endif %}</td>
                         <td>
-                            <a class="btn btn-info" href="{{ path('product_show', { 'id': entity.id }) }}">show</a>
+                            <a class="btn btn-info" href="{{ path('product_show', { 'id': entity.id }) }}">show</a>&nbsp;
                             <a class="btn btn-success" href="{{ path('product_edit', { 'id': entity.id }) }}">edit</a>
                         </td>
                     </tr>
@@ -77,7 +46,4 @@
             </table>
         </div>
     </div>
-
-
-
-    {% endblock %}
+{% endblock %}

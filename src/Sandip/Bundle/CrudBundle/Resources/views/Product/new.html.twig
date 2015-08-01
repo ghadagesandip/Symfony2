@@ -3,7 +3,14 @@
 {% block title %} Add new product {% endblock %}
 
 {% block body -%}
+<div class="row">
+    <div class="col-lg-2">
+        <a class="btn btn-primary" href="{{ path('product') }}">
+            Back to the list
+        </a>
+    </div>
 
+    <div class="col-lg-10">
 
     {{ form_start(form,{'attr':{'novalidate':'novalidate'}}) }}
 
@@ -28,11 +35,8 @@
     <div class="form-group">
         {{ form_widget(form.submit,{'attr':{'class':'btn btn-success'}}) }}
     </div>
-
     {{ form_end(form) }}
-
-            <a href="{{ path('product') }}" class="btn btn-default">
-                Back to the list
-            </a>
+    </div>
+</div>
 
 {% endblock %}

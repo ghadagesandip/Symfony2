@@ -1,3 +1,11 @@
+sandip_app:
+    resource: "@SandipAppBundle/Resources/config/routing.yml"
+    prefix:   /
+
+sandip_user_mgmt:
+    resource: "@SandipUserMgmtBundle/Resources/config/routing.yml"
+    prefix:   /
+
 sandip_crud:
     resource: "@SandipCrudBundle/Resources/config/routing.yml"
     prefix:   /
